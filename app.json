@@ -1,0 +1,223 @@
+{
+  "id": "no.homecontrol",
+  "name": {
+    "en": "HomeControl"
+  },
+  "description": {
+    "en": "HomeControl",
+    "nl": "HomeControl"
+  },
+  "category": [
+    "lights"
+  ],
+  "version": "0.0.5",
+  "compatibility": ">=1.5.3",
+  "sdk": 2,
+  "author": {
+    "name": "Daniel Bonsaksen",
+    "email": "Danielbonsaksen@hotmail.com"
+  },
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "drivers": [
+    {
+     "id": "smart_plug",
+      "name": {
+        "en": "Smart Plug",
+        "nl": "Smart Plug"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "large": "drivers/smart_plug/assets/images/large.png",
+        "small": "drivers/smart_plug/assets/images/small.png"
+      },
+      "zigbee": {
+        "manufacturerName": "Develco Products A/S",
+        "productId": "ZigBee Wallplug HA SP2",
+        "deviceId": 1,
+        "profileId": 49353,
+        "learnmode": {
+          "instruction": {
+            "en": "Toggle the Plug to start pairing.\n\nIf pairing does not automatically start, try holding the button down until it starts blinking continusly",
+            "nl": "Zet de Plug uit en weer aan.\n\nWordt de Plug niet automatisch toegevoegd, probeer hem dan 6 keer aan en uit te zetten."
+          }
+        }
+      }
+    },
+    {
+      "id": "dimmable_bulb",
+      "name": {
+        "en": "Dimmable Bulb E27",
+        "nl": "Dimbare Lamp"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "zigbee": {
+        "manufacturerName": "LEEDARSON LIGHTING",
+        "productId": [ "A470S-A7R" ],
+        "deviceId": 257,
+        "profileId": 260,
+        "learnmode": {
+          "image": "/drivers/dimmable_bulb/assets/icon.svg",
+          "instruction": {
+            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 10 times very quickly. It will flash twice to indicate it has been reset.",
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 6 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/dimmable_bulb/assets/images/large.png",
+        "small": "/drivers/dimmable_bulb/assets/images/small.png"
+      },
+      "settings": [
+        {
+          "id": "transtime",
+          "type": "number",
+          "label": {
+            "nl": "Transitie tijd in seconden",
+            "en": "Transition time in seconds"
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 20
+          }
+        }
+      ]
+    },
+    {
+     "id": "sensor_magnet",
+     "name": {
+       "en": "Door/Window sensor",
+       "nl": "Door/Window sensor"
+     },
+     "class": "sensor",
+     "capabilities": [
+       "alarm_contact",
+       "measure_battery",
+       "alarm_battery"
+     ],
+     "zigbee": {
+       "manufacturerName": "LUMI",
+       "productId": [
+         "lumi.sensor_magnet"
+       ],
+       "deviceId": 260,
+       "profileId": 260,
+       "learnmode": {
+         "image": "/drivers/sensor_magnet/assets/learn_door.svg",
+         "instruction": {
+           "en": "Hold the sensor during inclusion in close proximity of Homey\nLong press the reset button for more than 3 seconds until the blue light flashes three times\nNote: keep pressing the reset button every 2 seconds to keep the sensor awake during the inclusion",
+           "nl": "Houd tijdens het toevoegen de sensor in de buurt van Homey\nHoud de reset knop ingedrukt voor meer dan 3 seconden totdat de blauwe led drie keer knippert\nNote: blijf de reset knop iedere 2 seconden indrukken om de sensor wakker te houden tijden het toevoegen"
+         }
+       }
+     },
+     "images": {
+       "large": "/drivers/sensor_magnet/assets/images/large.png",
+       "small": "/drivers/sensor_magnet/assets/images/small.png"
+     },
+     "settings": []
+   },
+   {
+      "id": "sensor_motion",
+      "name": {
+        "en": "HC Motion Sensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_luminance",
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": "LUMI",
+        "productId": "lumi.sensor_motion.aq2",
+        "deviceId": 260,
+        "profileId": 260,
+        "learnmode": {
+          "image": "/drivers/sensor_motion.aq2/assets/learn_human_body.svg",
+          "instruction": {
+            "en": "Hold the sensor during inclusion in close proximity of Homey\nLong press the reset button for more than 3 seconds until the blue light flashes three times",
+            "nl": "Houd tijdens het toevoegen de sensor in de buurt van Homey\nHoud de reset knop ingedrukt voor meer dan 3 seconden totdat de blauwe led drie keer knippert"
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/sensor_motion.aq2/assets/images/large.png",
+        "small": "/drivers/sensor_motion.aq2/assets/images/small.png"
+      },
+      "settings": [
+        {
+          "id": "alarm_motion_reset_window",
+          "type": "number",
+          "label": {
+            "en": "Disable motion alarm after",
+            "nl": "Schakel bewegingsalarm uit na"
+          },
+          "hint": {
+            "en": "This setting will disable the motion alarm after the given time (in seconds) has expired. Every time motion is observed by the device it will reset this timeout.",
+            "nl": "Deze instelling zal het bewegingsalarm uitschakelen na de tijd (in seconden) is verstreken. Elke keer dat opnieuw beweging wordt gedetecteerd wordt deze timer herstart."
+          },
+          "value": 300,
+          "attr": {
+            "min": 1,
+            "max": 86400
+          }
+        }
+      ]
+    },
+    {
+      "id": "dimmable_gu10",
+      "name": {
+        "en": "Dimmable GU10 Bulb",
+        "nl": "Dimbare GU10 Lamp"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "zigbee": {
+        "manufacturerName": "LEEDARSON LIGHTING",
+        "productId": [ "M350ST-W1R-01" ],
+        "deviceId": 257,
+        "profileId": 260,
+        "learnmode": {
+          "image": "/drivers/dimmable_gu10/assets/icon.svg",
+          "instruction": {
+            "en": "Toggle the bulb to start pairing.\n\nIf pairing does not automatically start within 20 seconds, try resetting the bulb by toggling it 10 times very quickly. It will flash twice to indicate it has been reset.",
+            "nl": "Zet de lamp uit en weer aan.\n\nWordt de lamp niet automatisch toegevoegd binnen 20 seconden, probeer hem dan te resetten door snel 10 keer de lamp aan en uit te zetten. De lamp zal twee keer knipperen om aan te geven dat hij is gereset."
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/dimmable_gu10/assets/images/large.png",
+        "small": "/drivers/dimmable_gu10/assets/images/small.png"
+      },
+      "settings": [
+        {
+          "id": "transtime",
+          "type": "number",
+          "label": {
+            "nl": "Transitie tijd in seconden",
+            "en": "Transition time in seconds"
+          },
+          "value": 1,
+          "attr": {
+            "min": 0,
+            "max": 20
+          }
+        }
+      ]
+    }
+  ]
+}
