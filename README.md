@@ -17,4 +17,3 @@ This app allows you to connect your Homecontrol devices to Homey
 # Version 0.0.4
 Initial release
 
-NOTE: This app is based on INNR Lightning, thanks to Kasteleman!
