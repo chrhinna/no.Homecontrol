@@ -14,6 +14,11 @@ This app allows you to connect your Homecontrol devices to Homey
 * HC Motion sensor
 * HC Door/Window sensor
 
+# Version 0.0.5
+Started process of adding new devices:
+* HC Motion sensor
+* HC Door/Window sensor
+
 # Version 0.0.4
 Initial release
 
