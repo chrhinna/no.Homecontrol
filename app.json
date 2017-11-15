@@ -48,6 +48,36 @@
           }
         }
       }
+    },  {
+      "id": "hc_outlet",
+      "name": {
+        "en": "HC Dual Outlet",
+        "nl": "HC Dual Outlet"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_temperature"
+      ],
+      "images": {
+        "large": "drivers/hc_outlet/assets/images/large.png",
+        "small": "drivers/hc_outlet/assets/images/small.png"
+      },
+      "zigbee": {
+        "manufacturerName": "OSRAM",
+        "productId": [
+          "Plug 01",
+          "Plug - LIGHTIFY"
+        ],
+        "deviceId": 16,
+        "profileId": 49246,
+        "learnmode": {
+          "instruction": {
+            "en": "Plug in the Plug, or toggle the Plug to start pairing.\n\nIf pairing does not automatically start, try turning the Plug on and off 6 times.",
+            "nl": "Stop de Plug in het stopcontact of zet de Plug uit en weer aan om hem toe te voegen.\n\nWordt de Plug niet automatisch toegevoegd, probeer hem dan 6 keer aan en uit te zetten."
+          }
+        }
+      }
     },
     {
       "id": "dimmable_bulb",
@@ -96,8 +126,8 @@
     {
      "id": "sensor_magnet",
      "name": {
-       "en": "Door/Window sensor",
-       "nl": "Door/Window sensor"
+       "en": "HC Door/Window sensor",
+       "nl": "HC Door/Window sensor"
      },
      "class": "sensor",
      "capabilities": [
@@ -115,8 +145,8 @@
        "learnmode": {
          "image": "/drivers/sensor_magnet/assets/learn_door.svg",
          "instruction": {
-           "en": "Hold the sensor during inclusion in close proximity of Homey\nLong press the reset button for more than 3 seconds until the blue light flashes three times\nNote: keep pressing the reset button every 2 seconds to keep the sensor awake during the inclusion",
-           "nl": "Houd tijdens het toevoegen de sensor in de buurt van Homey\nHoud de reset knop ingedrukt voor meer dan 3 seconden totdat de blauwe led drie keer knippert\nNote: blijf de reset knop iedere 2 seconden indrukken om de sensor wakker te houden tijden het toevoegen"
+           "en": "If you have to reset manually press a round circle on the magnetic sensor for a few seconds until it starts to flash.",
+           "nl": ""
          }
        }
      },
@@ -144,16 +174,16 @@
         "deviceId": 260,
         "profileId": 260,
         "learnmode": {
-          "image": "/drivers/sensor_motion.aq2/assets/learn_human_body.svg",
+          "image": "/drivers/sensor_motion/assets/learn_human_body.svg",
           "instruction": {
-            "en": "Hold the sensor during inclusion in close proximity of Homey\nLong press the reset button for more than 3 seconds until the blue light flashes three times",
-            "nl": "Houd tijdens het toevoegen de sensor in de buurt van Homey\nHoud de reset knop ingedrukt voor meer dan 3 seconden totdat de blauwe led drie keer knippert"
+            "en": "If you have to reset manually you can tap into the little button that you see when you take off the lid of the motion sensor , for a few seconds until it starts flashing intensively",
+            "nl": ""
           }
         }
       },
       "images": {
-        "large": "/drivers/sensor_motion.aq2/assets/images/large.png",
-        "small": "/drivers/sensor_motion.aq2/assets/images/small.png"
+        "large": "/drivers/sensor_motion/assets/images/large.png",
+        "small": "/drivers/sensor_motion/assets/images/small.png"
       },
       "settings": [
         {
@@ -165,7 +195,7 @@
           },
           "hint": {
             "en": "This setting will disable the motion alarm after the given time (in seconds) has expired. Every time motion is observed by the device it will reset this timeout.",
-            "nl": "Deze instelling zal het bewegingsalarm uitschakelen na de tijd (in seconden) is verstreken. Elke keer dat opnieuw beweging wordt gedetecteerd wordt deze timer herstart."
+            "nl": ""
           },
           "value": 300,
           "attr": {
