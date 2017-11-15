@@ -21,4 +21,3 @@ Started process of adding new devices:
 
 # Version 0.0.4
 Initial release
-
