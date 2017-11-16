@@ -6,7 +6,7 @@ This app allows you to connect your Homecontrol devices to Homey
 
 * HC GU10 bulb
 * HC E27 bulb
-* Develco develco zhwr202
+* Develco zhwr202
 
 # Devices in progress
 
@@ -20,4 +20,6 @@ Started process of adding new devices:
 * HC Door/Window sensor
 
 # Version 0.0.4
-Initial release
+Initial commit
+
+** This app is based of INNR Lightning - Thanks to Kasteleman!
